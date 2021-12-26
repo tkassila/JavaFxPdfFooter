@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="584.0" prefWidth="787.0" spacing="7.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox>
+               <children>
+                  <MenuBar prefHeight="25.0" prefWidth="97.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#pressedButtonHandlePdf" text="Open pdf to handle" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <Label prefHeight="24.0" prefWidth="728.0" text="Read input pdf with/out password and add either a text footer or/and an encryption into a temporary file or saved copy output pdf file.">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="894.0" spacing="5.0">
+               <children>
+                  <Label maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="69.0" style="-fx-font-weight: bold;" text="Input file:" />
+                  <Label fx:id="labelInputFile" maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="813.0" />
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox>
+               <children>
+                  <ButtonBar maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0">
+                    <buttons>
+                      <Button fx:id="buttonHandlePdf" defaultButton="true" mnemonicParsing="false" onAction="#pressedButtonHandlePdf" style="-fx-font-weight: bold;" text="Input pdf" />
+                        <Button fx:id="buttonOpenTmpGenPdf" layoutX="288.0" layoutY="14.0" mnemonicParsing="false" onAction="#pressedButtonOpenGenPdf" prefHeight="25.0" prefWidth="215.0" style="-fx-font-weight: bold;" text="Open generated tmp pdf" />
+                        <Button fx:id="buttonSaveGenPdf" layoutX="535.0" layoutY="14.0" mnemonicParsing="false" onAction="#pressedButtonSaveGenPdf" style="-fx-font-weight: bold;" text="Save generated  pdf" />
+                        <Button fx:id="buttonOpenSavedPdf" layoutX="181.0" layoutY="14.0" mnemonicParsing="false" onAction="#pressedButtonOpenSavedPdf" prefHeight="25.0" prefWidth="215.0" style="-fx-font-weight: bold;" text="Open saved pdf" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </HBox>
+            <VBox spacing="5.0" style="-fx-border-color: black; -fx-border-radius: 10px;">
+               <children>
+                  <HBox prefHeight="35.0" prefWidth="748.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="98.0" style="-fx-font-weight: bold;" text="Footer pos.:">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" />
+                           </padding>
+                        </Label>
+                        <FlowPane hgap="7.0" prefHeight="56.0" prefWidth="768.0" vgap="5.0">
+                           <children>
+                              <RadioButton fx:id="radioButtonNoFooter" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="No footer">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="footer" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="radioButtonLeftPos" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Left corner" toggleGroup="$footer" />
+                              <RadioButton fx:id="radioButtonCenterPos" mnemonicParsing="false" prefHeight="17.0" prefWidth="79.0" selected="true" text="Center" toggleGroup="$footer" />
+                              <RadioButton fx:id="radioButtonRightPos" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Right corner" toggleGroup="$footer" />
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="22.0" prefWidth="158.0" style="-fx-font-weight: bold;" text="Add/Minus corner px pos.:">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="testFieldMinusPos" prefHeight="25.0" prefWidth="46.0" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <Label prefHeight="22.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Font size:">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="textFieldFontSize" prefHeight="25.0" prefWidth="56.0" />
+                                 </children>
+                              </HBox>
+                              <HBox nodeOrientation="LEFT_TO_RIGHT" spacing="5.0">
+                                 <children>
+                                    <Label text="Font:" />
+                                    <ChoiceBox fx:id="choiseBoxFont" prefHeight="25.0" prefWidth="118.0" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="40.0" nodeOrientation="LEFT_TO_RIGHT" spacing="5.0">
+                                 <children>
+                                    <Label text="Style:" />
+                                    <FlowPane hgap="5.0" prefHeight="14.0" prefWidth="543.0" vgap="5.0">
+                                       <children>
+                                          <CheckBox fx:id="checkBoxStyle_NORMAL" mnemonicParsing="false" text="NORMAL" />
+                                          <CheckBox fx:id="checkBoxStyle_BOLD" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="BOLD" />
+                                          <CheckBox fx:id="checkBoxStyle_ITALIC" layoutX="86.0" layoutY="10.0" mnemonicParsing="false" text="ITALIC" />
+                                          <CheckBox fx:id="checkBoxStyle_UNDERLINE" layoutX="208.0" layoutY="32.0" mnemonicParsing="false" text="UNDERLINE" />
+                                          <CheckBox fx:id="checkBoxStyle_BOLDITALIC" layoutX="166.0" layoutY="32.0" mnemonicParsing="false" text="BOLDITALIC" />
+                                          <CheckBox fx:id="checkBoxStyle_STRIKETHRU" layoutX="100.0" layoutY="32.0" mnemonicParsing="false" text="STRIKETHRU" />
+                                       </children>
+                                    </FlowPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </FlowPane>
+                     </children>
+                     <padding>
+                        <Insets top="9.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="751.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="34.0" prefWidth="88.0" style="-fx-font-weight: bold;" text="Footer text:" />
+                        <TextField fx:id="textFieldFooter" maxWidth="1.7976931348623157E308" prefHeight="34.0" prefWidth="629.0" style="-fx-font-weight: bold;" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="vBoxEncrypt" spacing="5.0" style="-fx-border-color: black; -fx-border-radius: 10px;" VBox.vgrow="NEVER">
+               <children>
+                  <HBox fx:id="hboxEncription" prefHeight="44.0" prefWidth="730.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="32.0" prefWidth="96.0" style="-fx-font-weight: bold;" text="Pdf encryption:" />
+                        <RadioButton fx:id="radioButtonNoEncription" mnemonicParsing="false" selected="true" style="-fx-font-weight: bold;" text="No encryption">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="passwords" />
+                           </toggleGroup>
+                           <padding>
+                              <Insets top="9.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="radioButtonReadEncription" layoutX="118.0" layoutY="10.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="Password of input file" toggleGroup="$passwords">
+                           <padding>
+                              <Insets top="9.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="radioButtonReadWriteEncription" layoutX="217.0" layoutY="10.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="Read and write passwords" toggleGroup="$passwords">
+                           <padding>
+                              <Insets top="9.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="radioButtonWriteEncryption" layoutX="507.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="155.0" style="-fx-font-weight: bold;" text="Write password" toggleGroup="$passwords">
+                           <padding>
+                              <Insets top="9.0" />
+                           </padding>
+                        </RadioButton>
+                        <Label prefHeight="33.0" prefWidth="112.0" style="-fx-font-weight: bold;" text="Gen. pwd length:">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="textFieldGenPwdLen" prefHeight="26.0" prefWidth="35.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets right="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="109.0" style="-fx-font-weight: bold;" text="User rights:">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <FlowPane hgap="5.0" prefHeight="82.0" prefWidth="795.0" vgap="10.0">
+                           <children>
+                              <CheckBox fx:id="checkBoxOnlyRightToRead" disable="true" mnemonicParsing="false" selected="true" style="-fx-font-weight: bold;" text="Only rigth to read" />
+                              <CheckBox fx:id="checkBoxALLOW_ASSEMBLY" disable="true" mnemonicParsing="false" style="-fx-font-weight: bold;" text="ALLOW_ASSEMBLY" />
+                              <CheckBox fx:id="checkBoxALLOW_DEGRADED_PRINTING" disable="true" mnemonicParsing="false" style="-fx-font-weight: bold;" text="ALLOW_DEGRADED_PRINTING" />
+                              <CheckBox fx:id="checkBoxALLOW_PRINTING" disable="true" layoutX="10.0" layoutY="27.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="ALLOW_PRINTING" />
+                              <CheckBox fx:id="checkBoxALLOW_FILL_IN" disable="true" mnemonicParsing="false" style="-fx-font-weight: bold;" text="ALLOW_FILL_IN" />
+                              <CheckBox fx:id="checkBoxALLOW_COPY" disable="true" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="ALLOW_COPY" />
+                              <CheckBox fx:id="checkBoxALLOW_MODIFY_ANNOTATIONS" disable="true" mnemonicParsing="false" style="-fx-font-weight: bold;" text="ALLOW_MODIFY_ANNOTATIONS" />
+                              <CheckBox fx:id="checkBoxALLOW_MODIFY_CONTENTS" disable="true" mnemonicParsing="false" style="-fx-font-weight: bold;" text="ALLOW_MODIFY_CONTENTS" />
+                              <CheckBox fx:id="checkBoxALLOW_SCREENREADERS" disable="true" layoutX="208.0" layoutY="27.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="ALLOW_SCREENREADERS" />
+                              <CheckBox fx:id="checkBoxDO_NOT_ENCRYPT_METADATA" disable="true" layoutX="433.0" layoutY="10.0" mnemonicParsing="false" selected="true" style="-fx-font-weight: bold;" text="DO_NOT_ENCRYPT_METADATA" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </FlowPane>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="hboxUser" prefHeight="44.0" prefWidth="600.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="166.0" style="-fx-font-weight: bold;" text="User password of input:" />
+                        <TextField fx:id="textFieldUserPassword" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="564.0" promptText="User password for input pdf file" style="-fx-font-weight: bold;" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="44.0" prefWidth="891.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="166.0" style="-fx-font-weight: bold;" text="Owner password of input:" />
+                        <TextField fx:id="textFieldOwnerPassword" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="569.0" promptText="Owner password for input pdf file" style="-fx-font-weight: bold;" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox layoutX="11.0" layoutY="55.0" prefHeight="44.0" prefWidth="600.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="166.0" style="-fx-font-weight: bold;" text="User password of output:" />
+                        <TextField fx:id="textFieldUserWritePassword" maxWidth="1.7976931348623157E308" prefHeight="34.0" prefWidth="600.0" promptText="User password for output pdf file" style="-fx-font-weight: bold;" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="buttonGenerateUserPwd" mnemonicParsing="false" onAction="#pressedButtonGenerateUserPwd" prefHeight="32.0" prefWidth="70.0" text="Generate" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox layoutX="11.0" layoutY="143.0" prefHeight="44.0" prefWidth="600.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="166.0" style="-fx-font-weight: bold;" text="Owner password of output:" />
+                        <TextField fx:id="textFieldOwnerWritePassword" maxWidth="1.7976931348623157E308" prefHeight="34.0" prefWidth="600.0" promptText="Owner password for output pdf file" style="-fx-font-weight: bold;" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="buttonGenerateOwnerPwd" mnemonicParsing="false" onAction="#pressedButtonGenerateOwnerPwd" prefHeight="32.0" prefWidth="70.0" text="Generate" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </VBox>
+            <HBox prefHeight="27.0" prefWidth="751.0" spacing="5.0">
+               <children>
+                  <Label fx:id="labelMsg" maxWidth="1.7976931348623157E308" prefHeight="17.0">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <TextArea fx:id="textAreaResult" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" />
+   </padding>
+</AnchorPane>

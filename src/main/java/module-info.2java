@@ -1,0 +1,7 @@
+module com.example.javafxpdffooter {
+    requires javafx.controls;
+    requires javafx.fxml;
+
+    opens com.metait.javafxpdffooter to javafx.fxml;
+    exports com.metait.javafxpdffooter;
+}
