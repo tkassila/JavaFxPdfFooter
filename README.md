@@ -1,1 +1,3 @@
-"# JavaFxPdfFooter" 
+== JavaFxPdfFooter
+
+This is a test.
