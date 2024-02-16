@@ -18,13 +18,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="879.0" prefWidth="1209.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="584.0" prefWidth="787.0" spacing="7.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox>
                <children>
-                  <MenuBar prefHeight="25.0" prefWidth="97.0">
+                  <MenuBar prefHeight="28.0" prefWidth="117.0">
                     <menus>
                       <Menu mnemonicParsing="false" text="File">
                         <items>
@@ -38,7 +38,7 @@
                       </Menu>
                     </menus>
                   </MenuBar>
-                  <Label prefHeight="24.0" prefWidth="728.0" text="Read input pdf with/out password and add either a text footer or/and an encryption into a temporary file or saved copy output pdf file.">
+                  <Label prefHeight="24.0" prefWidth="1078.0" text="Read input pdf with/out password and add either a text footer or/and an encryption into a temporary file or saved copy output pdf file.">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
@@ -47,8 +47,8 @@
             </HBox>
             <HBox maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="894.0" spacing="5.0">
                <children>
-                  <Label maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="69.0" style="-fx-font-weight: bold;" text="Input file:" />
-                  <Label fx:id="labelInputFile" maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="813.0" />
+                  <Label maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="86.0" style="-fx-font-weight: bold;" text="Input file:" />
+                  <Label fx:id="labelInputFile" maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="1111.0" />
                </children>
                <padding>
                   <Insets left="5.0" />
@@ -82,12 +82,12 @@
                                     <ToggleGroup fx:id="footer" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="radioButtonLeftPos" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Left corner" toggleGroup="$footer" />
+                              <RadioButton fx:id="radioButtonLeftPos" mnemonicParsing="false" prefHeight="18.0" prefWidth="116.0" text="Left corner" toggleGroup="$footer" />
                               <RadioButton fx:id="radioButtonCenterPos" mnemonicParsing="false" prefHeight="17.0" prefWidth="79.0" selected="true" text="Center" toggleGroup="$footer" />
-                              <RadioButton fx:id="radioButtonRightPos" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Right corner" toggleGroup="$footer" />
+                              <RadioButton fx:id="radioButtonRightPos" mnemonicParsing="false" prefHeight="18.0" prefWidth="127.0" text="Right corner" toggleGroup="$footer" />
                               <HBox>
                                  <children>
-                                    <Label prefHeight="22.0" prefWidth="158.0" style="-fx-font-weight: bold;" text="Add/Minus corner px pos.:">
+                                    <Label prefHeight="22.0" prefWidth="216.0" style="-fx-font-weight: bold;" text="Add/Minus corner px pos.:">
                                        <padding>
                                           <Insets bottom="5.0" left="5.0" />
                                        </padding>
@@ -97,7 +97,7 @@
                               </HBox>
                               <HBox spacing="5.0">
                                  <children>
-                                    <Label prefHeight="22.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Font size:">
+                                    <Label prefHeight="22.0" prefWidth="87.0" style="-fx-font-weight: bold;" text="Font size:">
                                        <padding>
                                           <Insets bottom="5.0" left="5.0" />
                                        </padding>
@@ -154,8 +154,8 @@
                <children>
                   <HBox fx:id="hboxEncription" prefHeight="44.0" prefWidth="730.0" spacing="5.0">
                      <children>
-                        <Label prefHeight="32.0" prefWidth="96.0" style="-fx-font-weight: bold;" text="Pdf encryption:" />
-                        <RadioButton fx:id="radioButtonNoEncription" mnemonicParsing="false" selected="true" style="-fx-font-weight: bold;" text="No encryption">
+                        <Label prefHeight="32.0" prefWidth="163.0" style="-fx-font-weight: bold;" text="Pdf encryption:" />
+                        <RadioButton fx:id="radioButtonNoEncription" mnemonicParsing="false" prefHeight="27.0" prefWidth="132.0" selected="true" style="-fx-font-weight: bold;" text="No encryption">
                            <toggleGroup>
                               <ToggleGroup fx:id="passwords" />
                            </toggleGroup>
@@ -163,22 +163,22 @@
                               <Insets top="9.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton fx:id="radioButtonReadEncription" layoutX="118.0" layoutY="10.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="Password of input file" toggleGroup="$passwords">
+                        <RadioButton fx:id="radioButtonReadEncription" layoutX="118.0" layoutY="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="190.0" style="-fx-font-weight: bold;" text="Password of input file" toggleGroup="$passwords">
                            <padding>
                               <Insets top="9.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton fx:id="radioButtonReadWriteEncription" layoutX="217.0" layoutY="10.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="Read and write passwords" toggleGroup="$passwords">
+                        <RadioButton fx:id="radioButtonReadWriteEncription" layoutX="217.0" layoutY="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="225.0" style="-fx-font-weight: bold;" text="Read and write passwords" toggleGroup="$passwords">
                            <padding>
                               <Insets top="9.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton fx:id="radioButtonWriteEncryption" layoutX="507.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="155.0" style="-fx-font-weight: bold;" text="Write password" toggleGroup="$passwords">
+                        <RadioButton fx:id="radioButtonWriteEncryption" layoutX="507.0" layoutY="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="144.0" style="-fx-font-weight: bold;" text="Write password" toggleGroup="$passwords">
                            <padding>
                               <Insets top="9.0" />
                            </padding>
                         </RadioButton>
-                        <Label prefHeight="33.0" prefWidth="112.0" style="-fx-font-weight: bold;" text="Gen. pwd length:">
+                        <Label prefHeight="33.0" prefWidth="140.0" style="-fx-font-weight: bold;" text="Gen. pwd length:">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -186,11 +186,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="textFieldGenPwdLen" prefHeight="26.0" prefWidth="35.0">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </TextField>
+                        <TextField fx:id="textFieldGenPwdLen" prefHeight="26.0" prefWidth="35.0" />
                      </children>
                      <padding>
                         <Insets left="5.0" right="5.0" />
@@ -283,7 +279,7 @@
                   </Label>
                </children>
             </HBox>
-            <TextArea fx:id="textAreaResult" prefHeight="200.0" prefWidth="200.0" />
+            <TextArea fx:id="textAreaResult" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="218.0" prefWidth="1199.0" VBox.vgrow="ALWAYS" />
          </children>
          <padding>
             <Insets left="5.0" right="5.0" />

@@ -9,8 +9,5 @@
         <module name="JavaFxPdfFooter" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="JavaFxPdfFooter" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>

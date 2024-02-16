@@ -9,7 +9,7 @@ echo ajohakemisto: %dt_exec_path2%
 set dtcp=%dt_exec_path2%;%dt_exec_path2%dtbook2asciimath.jar;.
 rem SET PATH=%ESPEAK_HOME%;%PATH%
 rem echo %ESPEAK_HOME%
-echo java -cp %dt_exec_path2%lib\openpdf-1.3.26.jar;%dt_exec_path2%lib\bcprov-ext-jdk15on-1.70.jar;%dt_exec_path2%JavaFxPdfFooter.jar;%CLASSPATH% com.metait.javafxpdffooter.JavaFxPdfFooterApplication
-java -cp %dt_exec_path2%lib\openpdf-1.3.26.jar;%dt_exec_path2%lib\bcprov-ext-jdk15on-1.70.jar;%dt_exec_path2%JavaFxPdfFooter.jar;%CLASSPATH% com.metait.javafxpdffooter.JavaFxPdfFooterApplication
+echo java -cp %dt_exec_path2%lib\com.lowagie.text-2.1.7.jar;%dt_exec_path2%lib\bcprov-ext-jdk15on-1.70.jar;%dt_exec_path2%JavaFxPdfFooter.jar;%CLASSPATH% com.metait.javafxpdffooter.JavaFxPdfFooterApplication
+java -cp %dt_exec_path2%lib\com.lowagie.text-2.1.7.jar;%dt_exec_path2%lib\bcprov-ext-jdk15on-1.70.jar;%dt_exec_path2%JavaFxPdfFooter.jar;%CLASSPATH% com.metait.javafxpdffooter.JavaFxPdfFooterApplication
 rem com.metait.javafxplayer.testapp.HelloWorld
 rem pause
